@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ressaltat"></div>
+    <p>Hola</p>
+
+    <style> 
+        .ressaltat{
+            background-color: yellow;
+            font-weight: bold; 
+        }
+    </style>
+
+    <script>
+    function quitarClase(){
+         let divC = document.getElementsByTagName("div")[0];
+         divC.classList.remove("ressaltat"); 
+    }
+    quitarClase(); 
+
+    function ponerClase(){
+        let par = document.getElementsByTagName("p")[0]; 
+        par.classList.add("ressaltat"); 
+    }
+    ponerClase(); 
+
+    </script> 
+</body>
+</html>

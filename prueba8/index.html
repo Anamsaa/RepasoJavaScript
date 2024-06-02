@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+</head>
+<body>
+    <div>
+        <button> Modificar p</button>
+        <button> Estilizar p</button>
+        <button> Reset </button>
+    </div>
+
+    <p>Texto original</p>
+
+    <script>
+
+       
+        function aplicarId(){
+            document.getElementsByTagName("button")[0].setAttribute("id","modificarP");
+            document.getElementsByTagName("button")[1].setAttribute("id","estilizarP");
+            document.getElementsByTagName("button")[2].setAttribute("id","resetP");
+        }
+
+        aplicarId();
+        window.onload = function(){
+            // Create a new H1 element
+            let h1 = document.createElement("h1"); 
+            // Set the text content of the H1 element
+            h1.textContent = "Bienvenido al mundo del DOM"; 
+            // Insert the H1 element after the body
+            document.body.insertBefore(h1, document.body.firstChild);
+        }
+
+        document.getElementById("modificarP").onclick = function(){
+            let p = document.getElementsByTagName("p")[0]; 
+            p.textContent = "Texto modificado"; 
+            //Recuerda que no se pone el estilo con - 
+            p.style.fontWeight = "bold"; 
+        }
+
+        document.getElementById("estilizarP").onclick = function(){
+            let p = document.getElementsByTagName("p")[0]; 
+            p.style.textAlign = "center"; 
+            p.style.fontSize = 40 + "px"; 
+        }
+
+        document.getElementById("resetP").ondblclick = function(){
+            let p = document.getElementsByTagName("p")[0]; 
+            p.textContent = "Texto original"; 
+            p.style.fontWeight = "normal"; 
+            p.style.textAlign = "initial"; 
+            p.style.fontSize = "initial";             
+        }
+
+    </script>
+
+</body>

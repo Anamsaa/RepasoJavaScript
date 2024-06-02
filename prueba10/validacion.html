@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación</title>
+</head>
+
+<body>
+
+    <form id="formulario" onsubmit="return validarDatos()">
+       <label for="name">Ingrese su nombre</label> 
+       <input type="text" id="nombre" required>
+       <br><br>
+       <label for="email">Ingrese su correo</label>
+       <input type="email" id="correo" required>
+       <br><br>
+       <input type="submit" value="Ingresar">
+    </form>
+
+    <p id="mensaje"></p> 
+
+    <script>
+        function validarDatos(){
+
+            event.preventDefault(); 
+
+            let name = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+
+            if (name.length < 3 || name.length > 30){
+                alert("El nombre debe tener entre 3 y 30 carácteres");
+                return false;
+            }
+
+            let emailRegex = /^[a-zA-Z]\w{9,14}@[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
+            if(!emailRegex.test(correo)){
+                alert("La dirección de correo es inválida");
+                return false;
+            }
+
+                insertarParrafo(name);
+                return true;
+        }
+
+        function insertarParrafo(nombre){
+            let p = document.getElementById("mensaje");
+            p.innerHTML = '<p>' + 'Bienvenido de nuevo ' + nombre + '</p>';
+        }
+
+        document.getElementById("formulario").reset(); 
+        
+    </script>
+</body>
+</html>

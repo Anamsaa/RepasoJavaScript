@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Colores</h1>
+    </header>
+    <main>
+        <img src="amarillo.png" onmouseover="cambiarColor('yellow')" onmouseout="devolverColor()" alt="amarillo">
+        <img src="azul.png" onmouseover="cambiarColor('blue')"  onmouseout="devolverColor()" alt="azul">
+        <img src="rosado.png" onmouseover="cambiarColor('pink')" onmouseout="devolverColor()" alt="rosado">
+        <img src="verde.png" onmouseover="cambiarColor('green')" onmouseout="devolverColor()" alt="verde">
+    </main>
+    
+    <style>
+
+        h1{
+            text-align: center;
+            color: red; 
+        }
+
+        main{
+            width: auto;
+            height: 500px; 
+            margin: 30px;
+            border-color: blue; 
+            border: 5px; 
+            border-style: solid;
+     
+        }
+
+        img{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
+
+    </style>
+    <script>
+
+        function cambiarColor(color){
+            document.body.style.background = color;
+        }
+
+        function devolverColor(){
+            document.body.style.background = "";
+        }
+
+    </script>
+</body>
+</html>

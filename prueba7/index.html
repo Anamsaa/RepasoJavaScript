@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Nuestros usuarios son deportistas</h1>
+    </header>
+    <form action="" id="formulario" onsubmit="agregarInformacion()"> 
+
+        <label for="nombre">Ingrese su nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <br><br>
+
+        <label for="edad">Ingrese su edad</label>
+        <input type="number" id="edad" name="edad">
+        <br><br>
+
+        <label for="deporte">Ingrese su deporte favorito</label>
+        <select name="deporte" id="deporte">
+          <option value="Futbol">Futbol</option>
+          <option value="Atletismo">Atletismo</option>
+          <option value="Basquetball">Basquetball</option>
+          <option value="Natacion">Natacion</option> 
+          <option value="Tenis">Tenis</option>
+        </select>
+        <br><br>
+
+        <label for="color">Ingrese el color de la camiseta</label>
+        <input type="color" id="color">
+        <br><br>
+
+        <label for="fecha">Ingrese la fecha desde cuando lo practica</label>
+        <input type="date" id="fecha" name="fecha">
+        <br><br>
+
+        <input type="submit" value="enviar">
+    </form>
+
+    <div id="informacion"></div>
+
+    <script> 
+        function agregarInformacion(){
+            //.preventDefault evita el envio del formulario
+            event.preventDefault();
+        //.value se utiliza comúnmente para obtener o establecer el valor de un elemento de formulario en HTML
+            var nombre = document.getElementById("nombre").value;
+            var edad = document.getElementById("edad").value;
+            var deporte = document.getElementById("deporte").value;
+            var color = document.getElementById("color").value;
+            var fecha = document.getElementById("fecha").value;
+
+            var listaUsuario = document.getElementById("informacion");
+            listaUsuario.innerHTML += '<li>' + nombre + '</li>';
+            listaUsuario.innerHTML += '<li>' + edad + '</li>';
+            listaUsuario.innerHTML += '<li>' + deporte + '</li>';
+            listaUsuario.innerHTML += '<li>' + color + '</li>';
+            listaUsuario.innerHTML += '<li>' + fecha + '</li>';
+           
+            document.getElementById("formulario").reset(); 
+        }
+
+
+        // document.getElementsByClassName
+        // document.getElementsByName
+        // document.getElementsByTagName
+
+    </script>
+</body>
+</html>

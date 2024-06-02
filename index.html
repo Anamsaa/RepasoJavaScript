@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .centrar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 3px solid gray;
+        }
+    </style>
+</head>
+<body>
+   <h3>Ejemplo window.focus() y window.blur()</h3>
+   <div class="centrar">
+      <button onclick="abrirVentana()">Abrir ventana</button>
+      <button onclick="ejemploFocus()">Enfocar ventana (window.focus)</button>
+      <button onclick="ejemploBlur()">Desenfocar ventana (window.blur)</button>
+   </div>
+
+   
+   <script>
+      var ventana;
+
+      function abrirVentana() {
+         ventana = window.open("https://www.cifpfbmoll.eu", "myWindow", "width=400,height=300");
+     }
+
+      function ejemploFocus() {
+         ventana.focus();
+      }
+
+      function ejemploBlur() {
+         ventana.blur();
+      }
+</script>
+</body>
+</html>
